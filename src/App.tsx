@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css'
-import HomePage from "./pages/Homepage.tsx";
+import HomePage from "./pages/Homepage";
 import Game from "./pages/Game";
 import Tournament from "./pages/Tournament";
 import Friends from "./pages/Friends";
