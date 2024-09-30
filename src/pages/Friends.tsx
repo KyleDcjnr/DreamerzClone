@@ -1,4 +1,4 @@
-import { Box, Flex, Text, Button, Image } from "@chakra-ui/react";
+import { Box, Flex, Text, Button} from "@chakra-ui/react";
 import Header from "../components/Header";
 import NavigationBar from "../components/NavigationBar";
 import Tables from "../components/Tables.";
