@@ -1,24 +1,35 @@
-import React, { useState } from "react";
-import {
-     Box,
-     Flex,
-    //  Button,
-     Circle } from "@chakra-ui/react";
+import React, { useState, useEffect } from "react";
+import { Box, Flex, Circle } from "@chakra-ui/react";
 
 interface CarouselProps {
   slides: React.ReactNode[];
+  intervalTime?: number; // optional prop to customize interval time
 }
 
-const Carousel: React.FC<CarouselProps> = ({ slides }) => {
+const Carousel: React.FC<CarouselProps> = ({ slides, intervalTime = 10000 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-//   const goToNextSlide = () => {
-//     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-//   };
+  // Function to move to the next slide
+  const goToNextSlide = () => {
+    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  };
 
+  // Function to manually go to a specific slide
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
+
+  // Auto slide with useEffect and setInterval
+  useEffect(() => {
+    const interval = setInterval(goToNextSlide, intervalTime);
+
+    // Cleanup the interval when component unmounts
+    return () => clearInterval(interval);
+  }, [currentSlide, intervalTime]);
+
+
+  const colors = ["purple.500", "green.500", "black.500", "orange.500"];
+
 
   return (
     <Flex
@@ -30,7 +41,7 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
       overflow="hidden"
       pos="relative"
       bg="gray.800"
-      borderRadius={'20px'}
+      borderRadius="20px"
     >
       {/* Slide container */}
       <Box
@@ -45,9 +56,8 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
             key={index}
             minW="100%"
             display="flex"
-            // alignItems="center"
             justifyContent="center"
-            bg={index % 2 === 0 ? "purple.500" : "green.500"}
+            bg={colors[index % colors.length]}
             color="white"
             fontSize="4xl"
           >
@@ -55,17 +65,6 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
           </Box>
         ))}
       </Box>
-
-      {/* Next Button */}
-      {/* <Button
-        pos="absolute"
-        bottom="20px"
-        right="20px"
-        colorScheme="teal"
-        onClick={goToNextSlide}
-      >
-        Next
-      </Button> */}
 
       {/* Slide indicators */}
       <Flex pos="absolute" bottom="20px" justify="center" align="center">

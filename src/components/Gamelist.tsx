@@ -32,7 +32,7 @@ export default function Gamelist() {
                     bgColor={'gold'}
                     position={'absolute'}
                     bottom={'-10px'}
-                    left={5}
+                    mx={'auto'}
                     p={'5px'}
                     gap={1}
                     fontSize={'12px'}
@@ -88,7 +88,7 @@ export default function Gamelist() {
                     bgColor={'gold'}
                     position={'absolute'}
                     bottom={'-10px'}
-                    left={5}
+                    mx={'auto'}
                     p={'5px'}
                     gap={1}
                     fontSize={'12px'}
@@ -144,7 +144,7 @@ export default function Gamelist() {
                     bgColor={'gold'}
                     position={'absolute'}
                     bottom={'-10px'}
-                    left={5}
+                    mx={'auto'}
                     p={'5px'}
                     gap={1}
                     fontSize={'12px'}

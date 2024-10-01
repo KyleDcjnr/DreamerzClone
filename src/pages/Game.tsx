@@ -1,7 +1,8 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import Header from "../components/Header";
-import Gamelist from "../components/Gamelist";
+// import Gamelist from "../components/Gamelist";
 import NavigationBar from "../components/NavigationBar";
+import SpinWheel from "../components/SpinWheel";
 
 export default function Game() {
   return (
@@ -30,9 +31,9 @@ export default function Game() {
             </Text>
           </Flex>
           <Text fontWeight={700} fontSize={"22px"}>
-            All games
+            Lucky Spin
           </Text>
-          <Gamelist />
+          <SpinWheel />
         </Box>
       </Flex>
       <NavigationBar />

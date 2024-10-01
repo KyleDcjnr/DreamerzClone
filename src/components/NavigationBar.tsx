@@ -2,8 +2,10 @@ import { Box, Icon } from "@chakra-ui/react"
 import { Link, useLocation } from "react-router-dom"
 import { GoHomeFill } from "react-icons/go";
 import { IoLogoGameControllerB } from "react-icons/io";
-import { HiUser } from "react-icons/hi2";
-import { HiMiniTrophy } from "react-icons/hi2";
+// import { HiUser } from "react-icons/hi2";
+import { RiTeamFill } from "react-icons/ri";
+// import { HiMiniTrophy } from "react-icons/hi2";
+import { TbTournament } from "react-icons/tb";
 
 interface NavItemProps {
     icon: React.ReactNode;
@@ -58,14 +60,14 @@ const NavigationBar: React.FC = () => {
             />
             <NavItem
                 icon={
-                    <Icon as={HiMiniTrophy} boxSize={10}/>
+                    <Icon as={TbTournament} boxSize={10}/>
                 }
                 isActive={location.pathname === "/tournament"}
                 to="/tournament"
             />
             <NavItem
                 icon={
-                    <Icon as={HiUser} boxSize={10}/>
+                    <Icon as={RiTeamFill} boxSize={10}/>
                 }
                 isActive={location.pathname === "/friends"}
                 to="/friends"
