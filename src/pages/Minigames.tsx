@@ -1,13 +1,13 @@
+import React from 'react'
 import { Box, Flex, Text } from "@chakra-ui/react";
 import Header from "../components/Header";
 import NavigationBar from "../components/NavigationBar";
-import SlotMachine from "../components/SlotMachine";
-import { useParams } from 'react-router-dom'
-import SpinnerWheel from '../components/SpinWheel';
+import Gamelist from '../components/Gamelist';
 
 
-const Game: React.FC = () => {
-  const { gameType } = useParams<{ gameType: string }>();
+
+const Minigames: React.FC = () => {
+
 
   return (
     <Box
@@ -28,19 +28,16 @@ const Game: React.FC = () => {
         pb={32}
       >
         <Header />
-        <Box display={"flex"} flexDirection={"column"} gap={3}>
-          <Flex alignItems={"center"} justifyContent={"space-between"} mt={5}>
+        <Box display={"flex"} flexDirection={"column"} gap={5}>
+          <Flex alignItems={"center"} justifyContent={"space-between"} mt={10}>
             <Text fontWeight={900} fontSize={"32px"}>
               Play to Earn
             </Text>
           </Flex>
-          
-          {gameType === 'slotMachine' && <SlotMachine />}
-          {gameType === 'spinWheel' && <SpinnerWheel />}
-          {(!gameType || (gameType !== 'slotMachine' && gameType !== 'spinWheel')) && (
-        <p>Please select a valid game.</p>
-      )}
-
+          <Text fontWeight={700} fontSize={"22px"}>
+            
+          </Text>
+            <Gamelist />
         </Box>
       </Flex>
       <NavigationBar />
@@ -48,4 +45,4 @@ const Game: React.FC = () => {
   );
 }
 
-export default Game
+export default Minigames

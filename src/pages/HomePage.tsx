@@ -3,7 +3,7 @@ import NavigationBar from "../components/NavigationBar";
 import Header from "../components/Header";
 import Carousel from "../components/Carousel";
 import Gamelist from "../components/Gamelist";
-
+import { Link } from "react-router-dom";
 const HomePage: React.FC = () => {
   const slides = [
     <Box
@@ -33,9 +33,11 @@ const HomePage: React.FC = () => {
         Play your way to the top of the league and earn prizes for free.
       </Text>
 
-      <Button mt={4} color={"purple"} bg={"rgba(128, 0, 128, 0.2)"}>
-        Play Now
-      </Button>
+      <Link to="/tournament">
+        <Button mt={4} color={"purple"} bg={"rgba(128, 0, 128, 0.2)"}>
+          Play Now
+        </Button>
+      </Link>
     </Box>,
     <Box
       textAlign="center"
@@ -64,9 +66,11 @@ const HomePage: React.FC = () => {
         Ready to face off the cool players in a friendly duel of champions ?
       </Text>
 
-      <Button mt={4} color={"green"} bg={"green.200"}>
-        Play for $1
-      </Button>
+      <Link to="/tournament">
+        <Button mt={4} color={"green"} bg={"green.200"}>
+          Play for $1
+        </Button>
+      </Link>
     </Box>,
     <Box
       textAlign="center"
@@ -95,9 +99,11 @@ const HomePage: React.FC = () => {
         Play with the Dukes for a slot at the Top, Beware they ain't COLD 
       </Text>
 
-      <Button mt={4} color={"white"} bg={"black"}>
-        Play for $10
-      </Button>
+      <Link to="/tournament">
+        <Button mt={4} color={"white"} bg={"black"}>
+          Play for $10
+        </Button>
+      </Link>
     </Box>,
     <Box
       textAlign="center"
@@ -128,9 +134,11 @@ const HomePage: React.FC = () => {
         </b>
       </Text>
 
-      <Button mt={4} color={"orange"} bg={"orange.200"}>
-        Play for $100
-      </Button>
+      <Link to="/tournament">
+        <Button mt={4} color={"orange"} bg={"orange.200"}>
+          Play for $100
+        </Button>
+      </Link>
     </Box>,
   ];
 
@@ -167,9 +175,11 @@ const HomePage: React.FC = () => {
             <Text fontWeight={900} fontSize={"20px"}>
               Keep on playing
             </Text>
+            <Link to={"/minigames"}>            
             <Button color={"blue.500"} bgColor={"blue.100"} width={"75px"}>
               See all
             </Button>
+            </Link>
           </Flex>
           <Gamelist />
         </Box>

@@ -51,8 +51,9 @@ export default function Friends() {
                 mx={'auto'}
                 >Bring friends, earn together! </Text>
                 <Text
-                width={'80%'}>
-                    Get 10% on all tournament fees paid by friends you invite through the year
+                width={'80%'}
+                fontSize={'18px'}>
+                    Refer 5 friends and get one free spin
                 </Text>
                 <Box
                 display={'flex'}

@@ -1,23 +1,28 @@
 import { Box, ChakraProvider } from "@chakra-ui/react"
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import customTheme from "./components/theme"
 import './index.css'
 import HomePage from "./pages/HomePage";
 import Game from "./pages/Game";
+import Gamelist from "./components/Gamelist";
 import Tournament from "./pages/Tournament";
 import Friends from "./pages/Friends";
+import Minigames from "./pages/Minigames";
+
 function App() {
   return (
     <ChakraProvider theme={customTheme}>
     <Box width={'100vw'} overflowX={'hidden'}>
-      <BrowserRouter>
+      <Router>
           <Routes>
             <Route index element={<HomePage />}  />
-            <Route path="/game" element={<Game />}/>
+            <Route path="/gamelist" element={<Gamelist />}/>
+            <Route path="/minigames" element={<Minigames />}/>
+            <Route path="/game/:gameType" element={<Game />} />
             <Route path="/tournament" element={<Tournament />}/>
             <Route path="/friends" element={<Friends />}/>
           </Routes>
-        </BrowserRouter>
+        </Router>
     </Box>
     </ChakraProvider>
   )

@@ -26,7 +26,7 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ scores }) => {
     <Box bg="gray.700" p={4} borderRadius="md" maxWidth="400px" width="100%">
       <VStack spacing={4}>
         <Heading size="md" color="teal.300">
-          Leaderboard
+          Player's Statistics
         </Heading>
         <Table variant="simple" size="sm">
           <Thead>

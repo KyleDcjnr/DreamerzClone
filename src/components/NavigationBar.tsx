@@ -29,6 +29,7 @@ const NavItem: React.FC<NavItemProps> = ({
 
 const NavigationBar: React.FC = () => {
     const location = useLocation();
+    const isGameActive = location.pathname.startsWith("/game");
     return(
         <nav>
         <Box
@@ -42,6 +43,9 @@ const NavigationBar: React.FC = () => {
         bottom={0}
         right={0}
         boxShadow={'0px 0px 10px 10px #ffffff'}
+        zIndex={
+            100
+        }
         // color={'rgba(0, 0, 0, 0.3)'}
         >
             <NavItem
@@ -55,8 +59,8 @@ const NavigationBar: React.FC = () => {
                 icon={
                     <Icon as={IoLogoGameControllerB} boxSize={10}/>
                 }
-                isActive={location.pathname === "/game"}
-                to="/game"
+                isActive={isGameActive || location.pathname=="/minigames"}
+                to="/minigames"
             />
             <NavItem
                 icon={

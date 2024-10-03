@@ -15,7 +15,7 @@ export default function Tables() {
   return (
     <Box>
       <TableContainer>
-        <Table variant="simple">
+        <Table variant="simple" size="sm">
           <TableCaption></TableCaption>
           <Thead>
             <Tr>
