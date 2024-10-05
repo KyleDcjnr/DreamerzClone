@@ -8,6 +8,7 @@ import Gamelist from "./components/Gamelist";
 import Tournament from "./pages/Tournament";
 import Friends from "./pages/Friends";
 import Minigames from "./pages/Minigames";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/game/:gameType" element={<Game />} />
             <Route path="/tournament" element={<Tournament />}/>
             <Route path="/friends" element={<Friends />}/>
+            <Route path="/profile" element={<Profile />}/>
           </Routes>
         </Router>
     </Box>

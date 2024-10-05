@@ -30,6 +30,7 @@ const NavItem: React.FC<NavItemProps> = ({
 const NavigationBar: React.FC = () => {
     const location = useLocation();
     const isGameActive = location.pathname.startsWith("/game");
+    const isProfileActive = location.pathname.startsWith("/profile")
     return(
         <nav>
         <Box
@@ -52,7 +53,7 @@ const NavigationBar: React.FC = () => {
                 icon={
                     <Icon as={GoHomeFill} boxSize={10}/>
                 }
-                isActive={location.pathname === "/"}
+                isActive={isProfileActive || location.pathname === "/"}
                 to="/"
             />
             <NavItem

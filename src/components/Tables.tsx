@@ -14,8 +14,8 @@ import {
 export default function Tables() {
   return (
     <Box>
-      <TableContainer>
-        <Table variant="simple" size="sm">
+      <TableContainer> 
+        <Table variant="simple" size="sm" >
           <TableCaption></TableCaption>
           <Thead>
             <Tr>

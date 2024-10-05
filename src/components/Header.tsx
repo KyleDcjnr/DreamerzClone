@@ -5,6 +5,7 @@ import {
   Icon,
   // Image
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 // import star from '/star.png'
 import { BsCurrencyDollar } from "react-icons/bs";
 import { GiWallet } from "react-icons/gi";
@@ -88,6 +89,7 @@ export default function Header() {
             Connect Wallet
           </Text>
         </Flex>
+        <Link to='/profile'>
         <Flex position={"relative"}>
           <Icon
             as={HiUser}
@@ -111,6 +113,7 @@ export default function Header() {
                     5638
                 </Text> */}
         </Flex>
+        </Link>
       </Flex>
     </Box>
   );
