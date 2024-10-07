@@ -2,7 +2,8 @@ import { Box, Flex, Text,  Icon } from "@chakra-ui/react";
 import { MdHelp } from "react-icons/md";
 import Header from "../components/Header";
 import NavigationBar from "../components/NavigationBar";
-import RegularTournament from "../components/RegularTournament";
+import RegularTask from "../components/RegularTask";
+import { PiSpinnerBallFill } from "react-icons/pi";
 
 export default function Tournament() {
   return (
@@ -25,15 +26,19 @@ export default function Tournament() {
         gap={5}
       >
         <Header />
-        <Box display={"flex"} flexDirection={"column"} gap={5}>
+        <Box display={"flex"} flexDirection={"column"} gap={1}>
           <Flex alignItems={"center"} justifyContent={"space-between"}>
             <Text fontWeight={900} fontSize={"32px"}>
-              Tournaments
+              Tasks
             </Text>
             <Icon as={MdHelp}
             boxSize={8}/>
           </Flex>
-          <RegularTournament />
+          <Text display={'flex'} gap={2}
+          alignItems={'center'}>Complete each task and earn a Free Spin
+            <Icon as={PiSpinnerBallFill}/>
+          </Text>
+          <RegularTask />
           {/* <Gamelist /> */}
         </Box>
       </Flex>

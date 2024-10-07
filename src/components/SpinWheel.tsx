@@ -1,5 +1,26 @@
 import React, { useState } from "react";
-import { Box, Button, Text, VStack, HStack, useToast } from "@chakra-ui/react";
+import { 
+  Box, 
+  Button, 
+  Text, 
+  VStack, 
+  HStack, 
+  useToast, 
+  Image,
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter, } from "@chakra-ui/react";
 import { Wheel } from "react-custom-roulette";
 import { motion, AnimatePresence } from "framer-motion";
 import Leaderboard from "./leaderboard";
@@ -21,6 +42,7 @@ const SpinnerWheel: React.FC = () => {
   const [showWinAnimation, setShowWinAnimation] = useState<boolean>(false);
   const [leaderboardScores, setLeaderboardScores] = useState<Score[]>([]);
   const toast = useToast();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const data = [
     { option: "0.5x", style: { backgroundColor: "#FF6B6B", textColor: "white" } },
@@ -134,18 +156,31 @@ const SpinnerWheel: React.FC = () => {
 
   return (
     <VStack spacing={8} align="center">
+      {!stakeAmount && (
+        <>
+        <Image src="/game.png"/>
+        </>
+      )}
       <Text fontSize="2xl" fontWeight="bold">
-        {stakeAmount ? `Stake: $${stakeAmount}` : "Please pay to play"}
+        {stakeAmount ? `Stake: $${stakeAmount}` : "Buy a slot to spin the wheel"}
       </Text>
+      {!stakeAmount && (
+        <>
+        <Text mt={-4} display={'flex'} color={"red"} gap={1}>
+        Note
+        <Text color={'black'}>
+        : 1 ton = 1 slot to spin
+        </Text>
+      </Text>
+        </>
+      )}
 
       {!stakeAmount && (
         <HStack spacing={4}>
           <Button colorScheme="blue" onClick={() => handlePayment(10)}>
-            Pay $10 to Play
+            Buy a slot
           </Button>
-          <Button colorScheme="blue" onClick={() => handlePayment(20)}>
-            Pay $20 to Play
-          </Button>
+
         </HStack>
       )}
 

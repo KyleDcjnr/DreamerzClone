@@ -5,7 +5,7 @@ import './index.css'
 import HomePage from "./pages/HomePage";
 import Game from "./pages/Game";
 import Gamelist from "./components/Gamelist";
-import Tournament from "./pages/Tournament";
+import Task from "./pages/Task";
 import Friends from "./pages/Friends";
 import Minigames from "./pages/Minigames";
 import Profile from "./pages/Profile";
@@ -20,7 +20,7 @@ function App() {
             <Route path="/gamelist" element={<Gamelist />}/>
             <Route path="/minigames" element={<Minigames />}/>
             <Route path="/game/:gameType" element={<Game />} />
-            <Route path="/tournament" element={<Tournament />}/>
+            <Route path="/task" element={<Task />}/>
             <Route path="/friends" element={<Friends />}/>
             <Route path="/profile" element={<Profile />}/>
           </Routes>
