@@ -2,7 +2,7 @@ import { Box, Icon } from "@chakra-ui/react"
 import { Link, useLocation } from "react-router-dom"
 import { GoHomeFill } from "react-icons/go";
 import { IoLogoGameControllerB } from "react-icons/io";
-// import { HiUser } from "react-icons/hi2";
+import { MdAdminPanelSettings } from "react-icons/md";
 import { RiTeamFill } from "react-icons/ri";
 // import { HiMiniTrophy } from "react-icons/hi2";
 import { PiCoinsFill } from "react-icons/pi";
@@ -77,6 +77,13 @@ const NavigationBar: React.FC = () => {
                 }
                 isActive={location.pathname === "/friends"}
                 to="/friends"
+            />
+            <NavItem
+                icon={
+                    <Icon as={MdAdminPanelSettings} boxSize={8}/>
+                }
+                isActive={location.pathname === "/admin"}
+                to="/admin"
             />
         </Box>
         </nav>

@@ -9,6 +9,7 @@ import Task from "./pages/Task";
 import Friends from "./pages/Friends";
 import Minigames from "./pages/Minigames";
 import Profile from "./pages/Profile";
+import Admin from "./pages/Admin"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/game/:gameType" element={<Game />} />
             <Route path="/task" element={<Task />}/>
             <Route path="/friends" element={<Friends />}/>
+            <Route path="/admin" element={<Admin />}/>
             <Route path="/profile" element={<Profile />}/>
           </Routes>
         </Router>

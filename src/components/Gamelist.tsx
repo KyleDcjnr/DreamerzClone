@@ -45,7 +45,7 @@ export default function Gamelist() {
                 </Box>
                 <Flex alignItems={'center'} justifyContent={'space-around'} height={'120px'} width={'100%'}>
                 <Box width={'50%'}>
-                    <Text fontWeight={800}>Spin to Fortune</Text>
+                    <Text fontWeight={800}>Roulette: Spin to Fortune</Text>
                     <Text fontSize={'14px'}>Try out your luck, double or lose</Text>
                 </Box>
                 <Button
