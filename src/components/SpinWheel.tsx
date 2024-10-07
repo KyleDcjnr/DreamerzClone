@@ -15,12 +15,13 @@ import {
   DrawerContent,
   DrawerCloseButton,
   useDisclosure,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter, } from "@chakra-ui/react";
+  FormControl,
+  FormLabel,
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper } from "@chakra-ui/react";
 import { Wheel } from "react-custom-roulette";
 import { motion, AnimatePresence } from "framer-motion";
 import Leaderboard from "./leaderboard";
@@ -31,6 +32,7 @@ interface Score {
 }
 
 const SpinnerWheel: React.FC = () => {
+  const {isOpen, onClose, onOpen} = useDisclosure()
   const [mustSpin, setMustSpin] = useState<boolean>(false);
   const [prizeNumber, setPrizeNumber] = useState<number>(0);
   const [stakeAmount, setStakeAmount] = useState<number | null>(null); // Stake amount is required before the game
@@ -42,7 +44,7 @@ const SpinnerWheel: React.FC = () => {
   const [showWinAnimation, setShowWinAnimation] = useState<boolean>(false);
   const [leaderboardScores, setLeaderboardScores] = useState<Score[]>([]);
   const toast = useToast();
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  
 
   const data = [
     { option: "0.5x", style: { backgroundColor: "#FF6B6B", textColor: "white" } },
@@ -177,7 +179,10 @@ const SpinnerWheel: React.FC = () => {
 
       {!stakeAmount && (
         <HStack spacing={4}>
-          <Button colorScheme="blue" onClick={() => handlePayment(10)}>
+          <Button colorScheme="blue" 
+          // onClick={() => handlePayment(10)}
+          onClick={onOpen}
+          >
             Buy a slot
           </Button>
 
@@ -224,7 +229,45 @@ const SpinnerWheel: React.FC = () => {
           </HStack>
         </>
       )}
+      {!stakeAmount && (
+      <Drawer isOpen={isOpen} placement="bottom" onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>Choose Amount of Slots</DrawerHeader>
+
+          <DrawerBody>
+            <Box display={'flex'} flexDirection={'column'} gap={5}>
+<FormControl>
+  <FormLabel>Amount</FormLabel>
+  <NumberInput max={100} min={1}>
+    <NumberInputField  />
+    <NumberInputStepper>
+      <NumberIncrementStepper />
+      <NumberDecrementStepper />
+    </NumberInputStepper>
+  </NumberInput>
+</FormControl>
+            </Box>
+          </DrawerBody>
+
+          <DrawerFooter>
+            <Button variant="outline" mr={3} onClick={onClose}>
+              Cancel
+            </Button>
+            <Button 
+              colorScheme="green" 
+              onClick={() => handlePayment(10)} 
+              // isDisabled={isConfirmButtonDisabled} // Disable button if inputs are invalid
+            >
+              Confirm
+            </Button>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+      )}
     </VStack>
+    
   );
 };
 

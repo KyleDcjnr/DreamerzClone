@@ -83,7 +83,7 @@ const HomePage: React.FC = () => {
       width={"100vw"}
       minHeight={"100vh"}
       alignItems={"center"}
-      py={7}
+      py={2}
       >
       <Flex
         // bg={'url(/Social-casinos.jpg)'}
