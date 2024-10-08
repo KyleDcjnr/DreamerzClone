@@ -10,6 +10,7 @@ import Friends from "./pages/Friends";
 import Minigames from "./pages/Minigames";
 import Profile from "./pages/Profile";
 import Admin from "./pages/Admin"
+import LoadingPage from "./pages/LoadingPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/friends" element={<Friends />}/>
             <Route path="/admin" element={<Admin />}/>
             <Route path="/profile" element={<Profile />}/>
+            <Route path="/loading" element={<LoadingPage />}/>
           </Routes>
         </Router>
     </Box>

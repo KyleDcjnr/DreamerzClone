@@ -39,7 +39,6 @@ export default function Tournament() {
             <Icon as={PiSpinnerBallFill}/>
           </Text>
           <RegularTask />
-          {/* <Gamelist /> */}
         </Box>
       </Flex>
       <NavigationBar />
