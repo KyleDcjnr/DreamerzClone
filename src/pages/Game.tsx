@@ -4,6 +4,7 @@ import NavigationBar from "../components/NavigationBar";
 import SlotMachine from "../components/SlotMachine";
 import { useParams } from 'react-router-dom'
 import SpinnerWheel from '../components/SpinWheel';
+import MemoryGame from "../components/Memory";
 
 
 const Game: React.FC = () => {
@@ -37,7 +38,8 @@ const Game: React.FC = () => {
           
           {gameType === 'slotMachine' && <SlotMachine />}
           {gameType === 'spinWheel' && <SpinnerWheel />}
-          {(!gameType || (gameType !== 'slotMachine' && gameType !== 'spinWheel')) && (
+          {gameType === 'memoryGame' && <MemoryGame />}
+          {(!gameType || (gameType !== 'slotMachine' && gameType !== 'spinWheel' && gameType !== 'memoryGame')) && (
         <p>Please select a valid game.</p>
       )}
 
